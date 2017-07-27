@@ -1,7 +1,7 @@
 # OpenRTM Tutorial
 
 ## Environment
-* Ubuntu 16.04 (Xenial)
+* Ubuntu 14.04 (Trusty)
 
 
 ## Installation
