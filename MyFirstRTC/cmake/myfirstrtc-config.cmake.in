@@ -1,0 +1,54 @@
+# MyFirstRTC CMake config file
+#
+# This file sets the following variables:
+# MyFirstRTC_FOUND - Always TRUE.
+# MyFirstRTC_INCLUDE_DIRS - Directories containing the MyFirstRTC include files.
+# MyFirstRTC_IDL_DIRS - Directories containing the MyFirstRTC IDL files.
+# MyFirstRTC_LIBRARIES - Libraries needed to use MyFirstRTC.
+# MyFirstRTC_DEFINITIONS - Compiler flags for MyFirstRTC.
+# MyFirstRTC_VERSION - The version of MyFirstRTC found.
+# MyFirstRTC_VERSION_MAJOR - The major version of MyFirstRTC found.
+# MyFirstRTC_VERSION_MINOR - The minor version of MyFirstRTC found.
+# MyFirstRTC_VERSION_REVISION - The revision version of MyFirstRTC found.
+# MyFirstRTC_VERSION_CANDIDATE - The candidate version of MyFirstRTC found.
+
+message(STATUS "Found MyFirstRTC-@PROJECT_VERSION@")
+set(MyFirstRTC_FOUND TRUE)
+
+find_package(<dependency> REQUIRED)
+
+#set(MyFirstRTC_INCLUDE_DIRS
+#    "@CMAKE_INSTALL_PREFIX@/include/@PROJECT_NAME_LOWER@-@PROJECT_VERSION_MAJOR@"
+#    ${<dependency>_INCLUDE_DIRS}
+#    )
+#
+#set(MyFirstRTC_IDL_DIRS
+#    "@CMAKE_INSTALL_PREFIX@/include/@PROJECT_NAME_LOWER@-@PROJECT_VERSION_MAJOR@/idl")
+set(MyFirstRTC_INCLUDE_DIRS
+    "@CMAKE_INSTALL_PREFIX@/include/@CPACK_PACKAGE_FILE_NAME@"
+    ${<dependency>_INCLUDE_DIRS}
+    )
+set(MyFirstRTC_IDL_DIRS
+    "@CMAKE_INSTALL_PREFIX@/include/@CPACK_PACKAGE_FILE_NAME@/idl")
+
+
+if(WIN32)
+    set(MyFirstRTC_LIBRARIES
+        "@CMAKE_INSTALL_PREFIX@/@LIB_INSTALL_DIR@/@CMAKE_SHARED_LIBRARY_PREFIX@@PROJECT_NAME_LOWER@@CMAKE_STATIC_LIBRARY_SUFFIX@"
+        ${<dependency>_LIBRARIES}
+        )
+else(WIN32)
+    set(MyFirstRTC_LIBRARIES
+        "@CMAKE_INSTALL_PREFIX@/@LIB_INSTALL_DIR@/@CMAKE_SHARED_LIBRARY_PREFIX@@PROJECT_NAME_LOWER@@CMAKE_SHARED_LIBRARY_SUFFIX@"
+        ${<dependency>_LIBRARIES}
+        )
+endif(WIN32)
+
+set(MyFirstRTC_DEFINITIONS ${<dependency>_DEFINITIONS})
+
+set(MyFirstRTC_VERSION @PROJECT_VERSION@)
+set(MyFirstRTC_VERSION_MAJOR @PROJECT_VERSION_MAJOR@)
+set(MyFirstRTC_VERSION_MINOR @PROJECT_VERSION_MINOR@)
+set(MyFirstRTC_VERSION_REVISION @PROJECT_VERSION_REVISION@)
+set(MyFirstRTC_VERSION_CANDIDATE @PROJECT_VERSION_CANDIDATE@)
+
