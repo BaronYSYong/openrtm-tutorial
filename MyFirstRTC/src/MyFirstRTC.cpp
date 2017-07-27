@@ -95,18 +95,21 @@ RTC::ReturnCode_t MyFirstRTC::onShutdown(RTC::UniqueId ec_id)
 
 RTC::ReturnCode_t MyFirstRTC::onActivated(RTC::UniqueId ec_id)
 {
+  std::cout << "onActivated" << std::endl;
   return RTC::RTC_OK;
 }
 
 
 RTC::ReturnCode_t MyFirstRTC::onDeactivated(RTC::UniqueId ec_id)
 {
+  std::cout << "onDeactivated" << std::endl;
   return RTC::RTC_OK;
 }
 
 
 RTC::ReturnCode_t MyFirstRTC::onExecute(RTC::UniqueId ec_id)
 {
+  std::cout << "onExecute" << std::endl;
   return RTC::RTC_OK;
 }
 
