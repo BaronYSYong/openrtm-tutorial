@@ -1,1 +1,5 @@
 */build/*
+*.bak
+*.log
+*.metadata/*
+*.xmi

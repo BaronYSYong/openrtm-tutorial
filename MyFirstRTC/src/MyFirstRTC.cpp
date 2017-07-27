@@ -110,6 +110,7 @@ RTC::ReturnCode_t MyFirstRTC::onDeactivated(RTC::UniqueId ec_id)
 RTC::ReturnCode_t MyFirstRTC::onExecute(RTC::UniqueId ec_id)
 {
   std::cout << "onExecute" << std::endl;
+  sleep(1);
   return RTC::RTC_OK;
 }
 
