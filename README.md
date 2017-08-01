@@ -5,6 +5,8 @@
 
 
 ## Installation
+
+### Eclipse with RTC builder and RT System Editor
 * Download the package from http://www.openrtm.org/openrtm/ja/node/6037#toc4
 ```
 $ cd /usr/share/openrtm-1.1
