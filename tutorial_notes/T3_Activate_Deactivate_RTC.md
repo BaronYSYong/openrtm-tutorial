@@ -41,3 +41,59 @@ If you "deactivate" your RTC, the "onDeactivated" will be called on the contrary
 ![](image/14.png) 
 
 The RTC's parameters (ex., onExecute's period) can be customized by rtc.conf file.
+
+## rtc.conf
+
+The rtc.conf is a setting file of the RTC that can configure the RTCs' common parameter without recompilation.
+
+In "your-path-to-workspace/MyFirstRTC_cpp/" folder, you can find "rtc.conf" file.
+The rtc.conf can configure a lot of items, but the generated rtc.conf includes many comments.
+
+Unfortunately, your rtc.conf does not work because we made "build" folder to clarify the skeleton's folder.
+Please copy the rtc.conf into the "build/src" folder.
+```
+$ cp rtc.conf build/src/
+```
+In default, RT-component will use the rtc.conf in the current folder.
+You can also modify the rtc.conf file like:
+```
+$ ./MyFirstRTCComp rtc.conf
+```
+
+## Name Server Address
+rtc.conf can define the Name Server's address that the RTC will register on.
+```
+corba.nameservers: [ip addrdss] : [port number]
+```
+For example,
+```
+corba.nameservers: localhost:2809
+```
+The port number "2809" is the default port number of the Naming Service.
+
+## Naming Rule
+In the previous example, you would find your RTC like
+```
+/localhost:2809/your-PC.host_cxt/MyFirstRTC0.rtc
+```
+![](image/15.png) 
+This is the default setting:
+```
+naming.formats: %h.host_cxt/%n.rtc
+```
+If your rtc.conf has following line:
+```
+naming.formats: %n.rtc
+```
+Your RTC will be
+```
+/localhost:2809/MyFirstRTC0.rtc
+```
+![](image/16.png) 
+
+## Execution Period
+the onExecute's period can be configured like
+```
+exec_cxt.periodic.rate: 1.0
+```
+The unit is "Hz". The default execution rate is 1000 Hz, so in the previous example, you would have seen the super-fast messages flood.
