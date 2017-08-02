@@ -20,6 +20,7 @@ $ openrtp
 
 ## Reference
 * http://openrtm.org/openrtm/node/5123
+* http://ysuga.net/?cat=17&lang=en
 
 ## Tutorial
 1. Skeleton Code Generation
