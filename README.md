@@ -22,12 +22,9 @@ $ openrtp
 * http://ysuga.net/?cat=17&lang=en
 
 ## Tutorial
-1. Skeleton Code Generation
-1. Periodic Execution
-1. Activate/Deactivate RTCs
-1. Data Out Port
-1. Connection
-1. Data In Port
+1. Periodic Console Output RTC
 1. Configuration
-1. Service Port
-1. RTC daemon
+1. Data Port Communication (Push Type)
+1. Data Port Communication (Pull Type)
+1. Use DataPort with Original Data Type
+1. Service Port Communication
