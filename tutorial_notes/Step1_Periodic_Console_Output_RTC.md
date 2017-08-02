@@ -101,7 +101,9 @@ But if you use Linux and preemptive kernel, you can use Real-Time support.
 #### Exit RTCs
 Do not close DOS console window
 If you close the DOS console window with X button, your RTC will become ZOMBIE in the Name Service.
+
 ![](image/6.jpg) 
 
 In your RT System Editor, Zombie killer button is available.
+
 ![](image/7.jpg) 
