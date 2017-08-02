@@ -1,4 +1,4 @@
-#Step 1: Periodic Console Output RTC
+# Step 1: Periodic Console Output RTC
 
 ## Generate Skeleton Code
 Use Eclipse with RTC Builder (RTCB). We also use RT System Builder (RTSE) to monitor the state condition of RTCs.
