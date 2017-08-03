@@ -228,6 +228,12 @@ class PeriodicConsoleOut
 
   // Configuration variable declaration
   // <rtc-template block="config_declare">
+  /*!
+   * 
+   * - Name:  param_value
+   * - DefaultValue: 0
+   */
+  int m_param_value;
 
   // </rtc-template>
 

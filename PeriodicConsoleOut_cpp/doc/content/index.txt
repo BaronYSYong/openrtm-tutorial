@@ -106,6 +106,7 @@ The available configuration parameters are described below:
 ================ ================== ================ ======
 Parameter        Data type          Default Value    Effect
 ================ ================== ================ ======
+value            int                0                
 ================ ================== ================ ======
 
 Ports

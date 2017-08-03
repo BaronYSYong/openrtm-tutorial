@@ -24,6 +24,15 @@ static const char* periodicconsoleout_spec[] =
     "max_instance",      "1",
     "language",          "C++",
     "lang_type",         "compile",
+    // Configuration variables
+    "conf.default.value", "0",
+
+    // Widget
+    "conf.__widget__.value", "text",
+    // Constraints
+
+    "conf.__type__.value", "int",
+
     ""
   };
 // </rtc-template>
@@ -66,6 +75,8 @@ RTC::ReturnCode_t PeriodicConsoleOut::onInitialize()
   // </rtc-template>
 
   // <rtc-template block="bind_config">
+  // Bind variables and configuration variable
+  bindParameter("value", m_param_value, "0");
   // </rtc-template>
   
   return RTC::RTC_OK;
@@ -109,7 +120,7 @@ RTC::ReturnCode_t PeriodicConsoleOut::onDeactivated(RTC::UniqueId ec_id)
 
 RTC::ReturnCode_t PeriodicConsoleOut::onExecute(RTC::UniqueId ec_id)
 {
-  std::cout << "Hello RTC (ver. 1.0)!!!!" << std::endl;
+  std::cout << "Value = " << m_param_value << std::endl;
   return RTC::RTC_OK;
 }
 

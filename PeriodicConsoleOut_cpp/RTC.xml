@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <rtc:RtcProfile rtc:version="0.2" rtc:id="RTC:BaronYong:Test:PeriodicConsoleOut:0.0.1" xmlns:rtcExt="http://www.openrtp.org/namespaces/rtc_ext" xmlns:rtcDoc="http://www.openrtp.org/namespaces/rtc_doc" xmlns:rtc="http://www.openrtp.org/namespaces/rtc" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
-    <rtc:BasicInfo xsi:type="rtcExt:basic_info_ext" rtcExt:saveProject="PeriodicConsoleOut_cpp" rtc:updateDate="2017-08-02T19:28:48+09:00" rtc:creationDate="2017-08-02T19:28:48+09:00" rtc:version="0.0.1" rtc:vendor="BaronYong" rtc:maxInstances="1" rtc:executionType="PeriodicExecutionContext" rtc:executionRate="1.0" rtc:description="Periodic Console Out Component" rtc:category="Test" rtc:componentKind="DataFlowComponent" rtc:activityType="PERIODIC" rtc:componentType="STATIC" rtc:name="PeriodicConsoleOut"/>
+    <rtc:BasicInfo xsi:type="rtcExt:basic_info_ext" rtcExt:saveProject="PeriodicConsoleOut_cpp" rtc:updateDate="2017-08-03T17:40:00.534+09:00" rtc:creationDate="2017-08-02T19:28:48+09:00" rtc:version="0.0.1" rtc:vendor="BaronYong" rtc:maxInstances="1" rtc:executionType="PeriodicExecutionContext" rtc:executionRate="1.0" rtc:description="Periodic Console Out Component" rtc:category="Test" rtc:componentKind="DataFlowComponent" rtc:activityType="PERIODIC" rtc:componentType="STATIC" rtc:name="PeriodicConsoleOut"/>
     <rtc:Actions>
         <rtc:OnInitialize xsi:type="rtcDoc:action_status_doc" rtc:implemented="true"/>
         <rtc:OnFinalize xsi:type="rtcDoc:action_status_doc" rtc:implemented="false"/>
@@ -17,5 +17,10 @@
         <rtc:OnAction xsi:type="rtcDoc:action_status_doc" rtc:implemented="false"/>
         <rtc:OnModeChanged xsi:type="rtcDoc:action_status_doc" rtc:implemented="false"/>
     </rtc:Actions>
+    <rtc:ConfigurationSet>
+        <rtc:Configuration xsi:type="rtcExt:configuration_ext" rtcExt:variableName="param_value" rtc:unit="" rtc:defaultValue="0" rtc:type="int" rtc:name="value">
+            <rtcExt:Properties rtcExt:value="text" rtcExt:name="__widget__"/>
+        </rtc:Configuration>
+    </rtc:ConfigurationSet>
     <rtc:Language xsi:type="rtcExt:language_ext" rtc:kind="C++"/>
 </rtc:RtcProfile>
