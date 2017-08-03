@@ -135,10 +135,12 @@ Then, launch name service and execute ConsoleIn / ConsoleOut.
 Select File -> “Open New System Editor”, then, drag / drop both RTCs from “Name Service View” to the editor
 
 Next, connect both connectors by drag/drop. An dialog will be shown, immediately after you connect.
-Then select “push” in Dtataflow type.
+Then select “push” in Dataflow type.
+
 ![](image/14.png)
 
 Okay, you are ready to communicate.
+
 ![](image/15.png)
 
 When you activate both RTCs, you can find “Input number” in console of ConsoleIn.
