@@ -53,15 +53,19 @@ If out is sequence type (variable length array), you need to change the buffer l
 
 ```
 RTC::ReturnCode_t ConsoleSeqIn::onExecute(RTC::UniqueId ec_id)
-{
-	m_out.data.length(3);
-	for(int i = 0;i < 3;i++) {
-		long value;
-		std::cout << "Input number:" << std::ends;
-		std::cin >> value;
-		std::cout << "Data is " << value << std::endl;
-		m_out.data[i] = value;
-	}
+{	
+	std::string value;
+	std::cout << "Input number:" << std::ends;
+	std::getline(std::cin, value);
+	std::cout << "Data is " << value << std::endl;
+	std::stringstream iss(value);
+	long num;
+	std::vector<long> numbers;
+	while(iss >> num) numbers.push_back(num);
+	std::cout << "size = " << numbers.size() << std::endl;
+	m_out.data.length(numbers.size());
+	for(unsigned int i = 0; i < numbers.size(); i++)
+		m_out.data[i] = numbers[i];	
 	m_outOut.write();
 	return RTC::RTC_OK;
 }//>
@@ -147,12 +151,16 @@ When you activate both RTCs, you can find “Input number” in console of Conso
 Input number as you like, and then, press enter.
 You can find the number you put in the console of ConsoleOut.
 
+### RTC::TimedLong version
 ![](image/16.png)
+
+### RTC::TimedLongSeq version
+![](image/17.png)
 
 ## Column 
 ### subscription_type
 Subscription type is very important, and you need to know if you manage the whole RT system.
-![](image/17.jpg)
+![](image/18.jpg)
 
 You can select three types of subscription_type parameter.
 
