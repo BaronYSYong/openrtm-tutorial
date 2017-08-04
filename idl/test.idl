@@ -1,0 +1,16 @@
+module ssr 
+{
+  struct TestStruct1 
+  {
+    long value1;
+    float value2;
+  };
+
+  typedef sequence TestSequence1;
+  
+  struct TestStruct2 
+  {
+    TestStruct1 header;
+    TestSequence1 data;
+  };
+};
