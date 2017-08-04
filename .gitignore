@@ -6,5 +6,5 @@
 */cmake/*
 *.so
 *.o
-*/RTC.xml*
+*/RTC.xml2*
 */.project
