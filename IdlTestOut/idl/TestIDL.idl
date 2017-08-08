@@ -1,0 +1,9 @@
+// TestIDL.idl
+
+module ssr {
+
+  struct TestStruct1 {
+    long value1;
+    float value2;
+  };
+};
