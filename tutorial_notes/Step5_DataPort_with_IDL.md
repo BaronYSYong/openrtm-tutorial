@@ -15,13 +15,6 @@ module ssr {
     long value1;
     float value2;
   };
-
-  typedef sequence TestSequence1;
-  
-  struct TestStruct2 {
-    TestStruct1 header;
-    TestSequence1 data;
-  };
 };
 ```
 
@@ -40,3 +33,47 @@ Reboot Eclipse.
 You can build the skeleton code in the ordinary 
 .
 ![](image/23.png)
+
+![](image/29.png)
+
+When you select the data type of the data port, you can find your data type is included
+
+![](image/30.png)
+
+## IdlTestIn
+Modify IdlTestIn/src/IdlTestIn.cpp as below
+
+```
+RTC::ReturnCode_t IdlTestIn::onExecute(RTC::UniqueId ec_id)
+{
+  if (m_inIn.isNew())
+  {
+    m_inIn.read();
+    std::cout << "Value 1 (long) = " << m_in.value1 << std::endl;
+    std::cout << "Value 2 (float) =  " << m_in.value2 << std::endl;
+  }
+  return RTC::RTC_OK;
+}//>
+```
+
+## IdlTestOut
+Modify IdlTestOut/src/IdlTestOut.cpp as below
+
+```
+RTC::ReturnCode_t IdlTestOut::onExecute(RTC::UniqueId ec_id)
+{
+  std::cout << "Input value1 (long):" << std::endl;
+  std::cin >> m_out.value1;
+  std::cout << "Input value2 (float):" << std::endl;
+  std::cin >> m_out.value2;  
+  m_outOut.write();
+  return RTC::RTC_OK;
+}//>
+```
+
+## Build and launch
+cmake and make both IdlTestIn and IdlTestOut
+Then, launch name service and execute IdlTestIn and IdlTestOut.
+
+![](image/31.png)
+
